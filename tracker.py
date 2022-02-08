@@ -15,35 +15,34 @@ Email = 'INSERT YOUR EMAIL ADDRESS HERE'
 Haslo = 'INSERT PASSWORD FOR YOUR EMAIL HERE'
 
 # Lista linków do śledzenia
-linki = [
-'https://www.elnino-parfum.pl/mancera-collection-l-or-instant-crush-woda-perfumowana-120-ml-tester/',                       #1      
-'https://www.elnino-parfum.pl/christian-dior-sauvage-elixir-perfumy-dla-mezczyzn-60-ml-tester/',                            #2
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-wood-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                   #3   
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-havane-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                 #4     
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-tonka-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                  #5     
-'https://www.elnino-parfum.pl/hugo-boss-boss-bottled-intense-woda-perfumowana-dla-mezczyzn-100-ml/',                        #6       
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-ultra-zest-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                  #7
-'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-125-ml-tester/',    #8            
-'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-40-ml-tester/',     #9           
-'https://www.elnino-parfum.pl/christian-dior-dior-homme-parfum-perfumy-dla-mezczyzn-75-ml-tester/',                         #10            
-'https://www.elnino-parfum.pl/bvlgari-aqva-amara-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                               #11           
-'https://www.elnino-parfum.pl/amouage-reflection-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                         #12         
-'https://www.elnino-parfum.pl/amouage-jubilation-xxv-for-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                 #14            
-'https://www.elnino-parfum.pl/jean-paul-gaultier-kokorico-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      #15            
-'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                         #16            
-'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-l-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',               #17           
-'https://www.elnino-parfum.pl/guerlain-habit-rouge-dress-code-2018-woda-perfumowana-dla-mezczyzn-100-ml-tester/',           #18            
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                       #19            
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml/',                              #20            
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml/',                               #21      
+linki = [     
+'https://www.elnino-parfum.pl/christian-dior-sauvage-elixir-perfumy-dla-mezczyzn-60-ml-tester/',                            
+'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-wood-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
+'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-havane-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                     
+'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-tonka-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
+'https://www.elnino-parfum.pl/hugo-boss-boss-bottled-intense-woda-perfumowana-dla-mezczyzn-100-ml/',                              
+'https://www.elnino-parfum.pl/thierry-mugler-a-men-ultra-zest-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                  
+'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-125-ml-tester/',               
+'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-40-ml-tester/',                
+'https://www.elnino-parfum.pl/christian-dior-dior-homme-parfum-perfumy-dla-mezczyzn-75-ml-tester/',                                     
+'https://www.elnino-parfum.pl/bvlgari-aqva-amara-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                          
+'https://www.elnino-parfum.pl/amouage-reflection-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                  
+'https://www.elnino-parfum.pl/amouage-jubilation-xxv-for-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                             
+'https://www.elnino-parfum.pl/jean-paul-gaultier-kokorico-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                  
+'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                     
+'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-l-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                          
+'https://www.elnino-parfum.pl/guerlain-habit-rouge-dress-code-2018-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                       
+'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                   
+'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml/',                                          
+'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml/',                                     
 'https://www.elnino-parfum.pl/creed-aventus-cologne-woda-perfumowana-dla-mezczyzn-100-ml-tester/',      
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml-tester/',                        #22            
-'https://www.elnino-parfum.pl/prada-luna-rossa-sport-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                           #23            
-'https://www.elnino-parfum.pl/prada-l-homme-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                          #24                      
-'https://www.elnino-parfum.pl/christian-dior-jules-2016-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                        #25                       
-'https://www.elnino-parfum.pl/tom-ford-fucking-fabulous-woda-perfumowana-30-ml/',                                           #26  
+'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml-tester/',                                    
+'https://www.elnino-parfum.pl/prada-luna-rossa-sport-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                       
+'https://www.elnino-parfum.pl/prada-l-homme-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                                
+'https://www.elnino-parfum.pl/christian-dior-jules-2016-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                               
+'https://www.elnino-parfum.pl/tom-ford-fucking-fabulous-woda-perfumowana-30-ml/',                                             
 'https://www.elnino-parfum.pl/chanel-platinum-egoiste-pour-homme-woda-toaletowa-dla-mezczyzn-100-ml-tester/',          
-'https://www.elnino-parfum.pl/paco-rabanne-1-million-prive-woda-perfumowana-dla-mezczyzn-100-ml-tester/'                    #27                   
+'https://www.elnino-parfum.pl/paco-rabanne-1-million-prive-woda-perfumowana-dla-mezczyzn-100-ml-tester/'                                       
 ]
 
 # STWORZENIE AGENTA NA PODSTAWIE WLASNEJ PRZEGLADARKI
