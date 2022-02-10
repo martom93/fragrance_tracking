@@ -15,8 +15,7 @@ Email = 'INSERT YOUR EMAIL ADDRESS HERE'
 Haslo = 'INSERT PASSWORD FOR YOUR EMAIL HERE'
 
 # Lista linków do śledzenia
-linki = [     
-'https://www.elnino-parfum.pl/christian-dior-sauvage-elixir-perfumy-dla-mezczyzn-60-ml-tester/',                            
+linki = [                                 
 'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-wood-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
 'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-havane-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                     
 'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-tonka-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
