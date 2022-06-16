@@ -8,41 +8,22 @@ from playsound import playsound
 from colorama import Fore, Back, Style
 from colorama import init
 
+#################### DANE WEJŚCIOWE ####################################
+Email = 'ADRES@ NADAWCY'
+Haslo = 'HASŁO'
+Odbiorca1 = 'ADRES1@'
+Odbiorca2 = 'ADRES2@' #opcjonalnie
+Nadawca = 'IMIE I NAZWISKO'  #Nazwa nadawcy wiadomości email
+########################################################################
+
 init()  # włączenie coloramy - do kolorowania tekstu w konsoli
 
-# Podanie loginu i hasła do poczty email, hasło jednorazowe, generowane przez google
-Email = 'INSERT YOUR EMAIL ADDRESS HERE'
-Haslo = 'INSERT PASSWORD FOR YOUR EMAIL HERE'
-
-# Lista linków do śledzenia
-linki = [                                 
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-wood-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-havane-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                     
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-pure-tonka-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                      
-'https://www.elnino-parfum.pl/hugo-boss-boss-bottled-intense-woda-perfumowana-dla-mezczyzn-100-ml/',                              
-'https://www.elnino-parfum.pl/thierry-mugler-a-men-ultra-zest-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                  
-'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-125-ml-tester/',               
-'https://www.elnino-parfum.pl/van-cleef-arpels-midnight-in-paris-pour-homme-woda-toaletowa-dla-mezczyzn-40-ml-tester/',                
-'https://www.elnino-parfum.pl/christian-dior-dior-homme-parfum-perfumy-dla-mezczyzn-75-ml-tester/',                                     
-'https://www.elnino-parfum.pl/bvlgari-aqva-amara-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                          
-'https://www.elnino-parfum.pl/amouage-reflection-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                  
-'https://www.elnino-parfum.pl/amouage-jubilation-xxv-for-man-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                             
-'https://www.elnino-parfum.pl/jean-paul-gaultier-kokorico-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                  
-'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                     
-'https://www.elnino-parfum.pl/guerlain-l-homme-ideal-l-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                          
-'https://www.elnino-parfum.pl/guerlain-habit-rouge-dress-code-2018-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                       
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                   
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-100-ml/',                                          
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml/',                                     
-'https://www.elnino-parfum.pl/creed-aventus-cologne-woda-perfumowana-dla-mezczyzn-100-ml-tester/',      
-'https://www.elnino-parfum.pl/prada-luna-rossa-extreme-woda-perfumowana-dla-mezczyzn-50-ml-tester/',                                    
-'https://www.elnino-parfum.pl/prada-luna-rossa-sport-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                       
-'https://www.elnino-parfum.pl/prada-l-homme-intense-woda-perfumowana-dla-mezczyzn-100-ml-tester/',                                                
-'https://www.elnino-parfum.pl/christian-dior-jules-2016-woda-toaletowa-dla-mezczyzn-100-ml-tester/',                                               
-'https://www.elnino-parfum.pl/tom-ford-fucking-fabulous-woda-perfumowana-30-ml/',                                             
-'https://www.elnino-parfum.pl/chanel-platinum-egoiste-pour-homme-woda-toaletowa-dla-mezczyzn-100-ml-tester/',          
-'https://www.elnino-parfum.pl/paco-rabanne-1-million-prive-woda-perfumowana-dla-mezczyzn-100-ml-tester/'                                       
-]
+#Odpalenie pliku z linkami i zapisanie kazdego linku do tablicy
+plik = open("linki.txt", "r")
+linki = []
+for line in plik:
+    line_strip = line.strip()
+    linki.append(line_strip)
 
 # STWORZENIE AGENTA NA PODSTAWIE WLASNEJ PRZEGLADARKI
 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -52,31 +33,27 @@ headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 # Funkcja wysyłająca maila na podane adresy wraz z informacją o dostępności danego produktu w sklepie.
 def WyslijMaila(nazwa, URL):
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP('smtp.gmail.com', 587)  #Port SMTP dla Gmaila
         server.ehlo()  # Sprawdzenie tożsamości
         server.starttls()  # Szyfrowanie połączenia
         server.ehlo()
         server.login(Email, Haslo)
         subject = nazwa + " jest dostepny w sprzedazy!"
         body = "Sprawdz link do produktu: \n\n" + URL
-        msg = f"From: (ADD YOUR NAME HERE )\nSubject: {subject}\n\n{body}"
-        server.sendmail(
-            'PUT SENDER ADDRESS HERE',
-            ["RECIVE_ADDRESS_1", "RECIVE_ADDRESS_2"],
-            msg
-        )
+        msg = f"From: {Nadawca}\nSubject: {subject}\n\n{body}"
+        server.sendmail(Email, [Odbiorca1, Odbiorca2], msg)
 
         print("Wiadomosc zostala wyslana")
         server.quit()
-    except:
+    except ValueError:
         print("Nie mozna wyslac wiadomosci e-mail")
 
 
 # Odtworzenie pliku dźwiękowego
 def OdpalDzwiek():
     try:
-        playsound('/notify.wav')
-    except:
+        playsound('notify.wav')
+    except ValueError:
         print("Blad odpalania pliku dzwiekowego")
 
 
@@ -84,7 +61,7 @@ def OdpalDzwiek():
 def WyswietlStrone(URL):
     try:
         webbrowser.open(URL, new=2)
-    except:
+    except ValueError:
         print("Nie mozna otworzyc strony internetowej")
 
 
@@ -110,16 +87,13 @@ def SprawdzenieDostepnosci(URL):
             SprawdzenieDostepnosci.variable = True
         else:
             SprawdzenieDostepnosci.variable = False
-    except:
+    except ValueError:
         print("Blad sieci")
         time.sleep(15)
 
-
 # Utworzenie flag dostepnosci produktow
-flagaDostepnosci = []
-for i in range(len(linki)):
+flagaDostepnosci = [1 for each in linki]
 
-    flagaDostepnosci.append(1)
 # Wykonywanie pętli głównej programu w nieskończonej pętli
 while (True):
     global flagaDostepnosc
@@ -127,34 +101,20 @@ while (True):
     try:
         for i in range(dlugosc_listy):
             SprawdzenieDostepnosci(linki[i])
+            czas = (f"{SprawdzenieDostepnosci.czas.tm_hour}:{SprawdzenieDostepnosci.czas.tm_min}:{SprawdzenieDostepnosci.czas.tm_sec}")
+
             if (SprawdzenieDostepnosci.variable == True) and (flagaDostepnosci[i] == 1):
-                with open('dostepnosc.txt', 'a') as f:
-                    print(str(SprawdzenieDostepnosci.czas.tm_hour).strip() + ":" + str(
-                        SprawdzenieDostepnosci.czas.tm_min).strip() + ":" + str(
-                        SprawdzenieDostepnosci.czas.tm_sec).strip() + "  " + SprawdzenieDostepnosci.item + " DOSTEPNY " + "w cenie: " + SprawdzenieDostepnosci.wartosc,
-                          file=f)
-                print(str(SprawdzenieDostepnosci.czas.tm_hour).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_min).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_sec).strip() + "  " + SprawdzenieDostepnosci.item + Fore.GREEN + " DOSTEPNY " + Style.RESET_ALL + "w cenie: " + SprawdzenieDostepnosci.wartosc)
+                print(f"{czas} {SprawdzenieDostepnosci.item} {Fore.GREEN}DOSTEPNY{Style.RESET_ALL} w cenie: {SprawdzenieDostepnosci.wartosc}")
                 WyslijMaila(SprawdzenieDostepnosci.item, linki[i])
                 OdpalDzwiek()
                 WyswietlStrone(linki[i])
                 flagaDostepnosci[i] = 2
             elif (SprawdzenieDostepnosci.variable == True) and (flagaDostepnosci[i] == 2):
-                with open('dostepnosc.txt', 'a') as f:
-                    print(str(SprawdzenieDostepnosci.czas.tm_hour).strip() + ":" + str(
-                        SprawdzenieDostepnosci.czas.tm_min).strip() + ":" + str(
-                        SprawdzenieDostepnosci.czas.tm_sec).strip() + "  " + SprawdzenieDostepnosci.item + " DOSTEPNY " + "w cenie: " + SprawdzenieDostepnosci.wartosc,
-                          file=f)
-                print(str(SprawdzenieDostepnosci.czas.tm_hour).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_min).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_sec).strip() + "  " + SprawdzenieDostepnosci.item + Fore.GREEN + " DOSTEPNY " + Style.RESET_ALL + "w cenie: " + SprawdzenieDostepnosci.wartosc)
+                print(f"{czas}  {SprawdzenieDostepnosci.item}{Fore.GREEN} DOSTEPNY{Style.RESET_ALL} w cenie: {SprawdzenieDostepnosci.wartosc}")
             else:
-                print(str(SprawdzenieDostepnosci.czas.tm_hour).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_min).strip() + ":" + str(
-                    SprawdzenieDostepnosci.czas.tm_sec).strip() + "  " + SprawdzenieDostepnosci.item + Fore.RED + " NIEDOSTEPNY " + Style.RESET_ALL)
+                print(f"{czas} {SprawdzenieDostepnosci.item} {Fore.RED}NIEDOSTEPNY{Style.RESET_ALL} ")
             time.sleep(1)
-    except:
+    except ValueError:
         print("KONCZENIE PRACY PROGRAMU....")
         sys.exit(0)
 
