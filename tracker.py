@@ -96,7 +96,6 @@ flagaDostepnosci = [1 for each in linki]
 
 # Wykonywanie pętli głównej programu w nieskończonej pętli
 while (True):
-    global flagaDostepnosc
     dlugosc_listy = len(linki)
     try:
         for i in range(dlugosc_listy):
